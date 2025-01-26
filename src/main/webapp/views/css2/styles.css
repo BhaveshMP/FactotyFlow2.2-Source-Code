@@ -1,0 +1,51 @@
+/* Basic reset for margins and padding */
+body, form {
+    margin: 0;
+    padding: 0;
+}
+
+/* Container to hold form elements */
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style for the form elements */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between elements */
+}
+
+/* Style for labels and inputs */
+label {
+    flex-basis: 150px; /* Width of the labels */
+    display: flex;
+    align-items: center;
+}
+
+input, textarea {
+    flex: 1; /* Allow inputs to take up remaining space */
+}
+
+/* Ensure textarea takes up more space */
+textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+/* Button style */
+button {
+    align-self: flex-start; /* Align button to the top of the form */
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

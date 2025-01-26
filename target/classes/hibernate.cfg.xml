@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- JDBC Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <!-- Cloud SQL connection URL -->
+        
+        <!-- not working -->
+        <!--
+		<property name="hibernate.connection.url">jdbc:mysql://google/FactoryManager2?cloudSQLInstance=factoryflow-446512:asia-south1:factorymanager2-db&amp;socketFactory=com.google.cloud.sql.mysql.SocketFactory</property>
+        -->
+        
+         <!-- Private ip -->
+          <!--
+        <property name="hibernate.connection.url">jdbc:mysql://10.0.1.3:3306/FactoryManager2</property>
+        -->
+        
+          <!-- Public ip-->
+          <property name="hibernate.connection.url">jdbc:mysql://34.93.153.70:3306/FactoryManager2</property>
+          
+          <!-- Local --> 
+          <!--
+        <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/FactoryManager2</property>
+         -->
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">admin</property>
+
+        <!-- JDBC connection pool settings -->
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        <property name="hibernate.c3p0.timeout">300</property>
+        <property name="hibernate.c3p0.max_statements">50</property>
+        <property name="hibernate.c3p0.idle_test_period">3000</property>
+
+        <!-- Specify Hibernate dialect for MySQL 8 -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Hibernate's automatic session context management -->
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!-- Enable Hibernate's automatic schema update -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Disable the second-level cache -->
+        <property name="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+        <!-- Add entity mappings -->
+        <mapping class="com.FM.Entities.Product"/>
+        <mapping class="com.FM.Entities.Register"/>
+        <mapping class="com.FM.Entities.Order"/>
+        <mapping class="com.FM.Entities.Inventory"/>
+        <mapping class="com.FM.Entities.AdminLog"/>
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,8 @@
+runtime: custom
+env: flex
+instance_class: F2
+
+env_variables:
+  HIBERNATE_DATASOURCE_URL: jdbc:mysql://google/FactoryManager2?cloudSQLInstance=factoryflow-446512:asia-south1:factorymanager2-db&socketFactory=com.google.cloud.sql.mysql.SocketFactory
+  HIBERNATE_DATASOURCE_USERNAME: root
+  HIBERNATE_DATASOURCE_PASSWORD: admin
