@@ -92,18 +92,18 @@ reloadServlet.reloadProductList(productDAO, request);
  
                  <!-- col -->
                 <c:forEach var="product" items="${ProductList}">
-                  <div class="col" data-bs-toggle="modal" data-bs-target="#image${product.id}">
-                        <!-- card -->
-                        <div class="card card-product">
-                           <div class="card-body text-center">
-                              <!-- img -->
-                              <img src="../ProductServlet?id=${product.id}" width="150" height="150" alt="${product.name} image missing" class="mb-3">
-                              <!-- text -->
-                              <div class="text-truncate">${product.name}</div>
-                           </div>
-                        </div>
-                  </div>
-                
+				   <div class="col" data-bs-toggle="modal" data-bs-target="#image${product.id}">
+				      <!-- card -->
+				      <div class="card card-product h-100">
+				         <div class="card-body text-center d-flex flex-column justify-content-between">
+				            <!-- img -->
+				            <img src="../ProductServlet?id=${product.id}" width="150" height="150" alt="${product.name} image missing" class="mb-3 mx-auto">
+				            <!-- text -->
+				            <div class="text-truncate mt-auto">${product.name}</div>
+				         </div>
+				      </div>
+				   </div>
+              
                 
                   
                   <!-- Modal -->
@@ -218,6 +218,6 @@ reloadServlet.reloadProductList(productDAO, request);
  request.getParameter("message");
  
 	 %>
-    
+
 </body>
 </html>
